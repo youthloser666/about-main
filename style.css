@@ -1,0 +1,222 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, section, section * {
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background:
+    linear-gradient(135deg, rgba(34,34,34,0.7) 0%, rgba(17,17,17,0.7) 100%),
+    url('img/bg.jpg') no-repeat center center fixed;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+}
+
+section {
+  background: rgba(30, 30, 30, 0.32);
+  box-shadow: 0 8px 32px 0 rgba(0,0,0,0.18), 0 1.5px 8px 0 rgba(0,0,0,0.18);
+  backdrop-filter: blur(14px) saturate(180%);
+  -webkit-backdrop-filter: blur(14px) saturate(180%);
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,0.08);
+  max-width: 340px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 18px 12px 10px 12px;
+  transition: box-shadow 0.3s, transform 0.3s;
+  z-index: 1;
+}
+
+section:hover {
+  box-shadow: 0 12px 40px 0 rgba(0,0,0,0.22), 0 2px 12px 0 rgba(0,0,0,0.22);
+  transform: scale(1.03);
+}
+
+section main {
+  padding: 24px 0 10px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  max-width: 340px;
+  justify-content: center;
+  align-items: center;
+}
+
+section main img {
+  width: 70px;
+  border-radius: 50%;
+  aspect-ratio: 1;
+  box-shadow: 0 2px 12px 0 rgba(0,0,0,0.18);
+  border: 2px solid rgba(255,255,255,0.18);
+  margin-bottom: 6px;
+}
+
+section main h2 {
+  background: linear-gradient(90deg, #fff 0%, #fff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  text-align: center;
+  letter-spacing: 1px;
+  text-shadow: none;
+}
+
+section main a {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #e5e5e5;
+  background: linear-gradient(90deg, #222 0%, #444 100%);
+  padding: 10px;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  gap: 20px;
+  transition: 0.3s;
+  font-weight: 500;
+}
+
+section main a:hover {
+  background: linear-gradient(90deg, #fff 0%, #bbb 100%);
+  border: 2px solid #fff;
+  color: #111;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+li span:first-child {
+  margin-right: 10px;
+  display: inline-flex;
+  justify-content: center;
+}
+
+ul li a {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 38px;
+  min-height: 38px;
+  font-size: 1.1rem;
+  text-decoration: none;
+  background: linear-gradient(90deg, #222 0%, #444 100%);
+  border: 1.5px solid #444;
+  border-radius: 8px;
+  color: #fff;
+  box-shadow: 0 2px 8px 0 rgba(0,0,0,0.08);
+  margin-bottom: 6px;
+  transition: 
+    background 0.3s,
+    color 0.3s,
+    box-shadow 0.3s,
+    border 0.3s;
+  overflow: hidden;
+  font-weight: 500;
+  padding: 0 10px;
+}
+
+ul li a:hover {
+  background: linear-gradient(90deg, #fff 0%, #bbb 100%);
+  color: #111;
+  border: 1.5px solid #fff;
+  box-shadow: 0 4px 16px 0 rgba(0,0,0,0.18);
+}
+
+ul li a .fa-brands,
+ul li a .social-text {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  transition: opacity 0.3s cubic-bezier(.4,0,.2,1), transform 0.3s cubic-bezier(.4,0,.2,1);
+  white-space: nowrap;
+}
+
+ul li a .fa-brands {
+  opacity: 1;
+  pointer-events: none;
+}
+
+ul li a .social-text {
+  opacity: 0;
+  pointer-events: none;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+ul li a:hover .fa-brands {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.7);
+}
+
+ul li a:hover .social-text {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+section footer p {
+  color: #fff;
+  background: rgba(34, 34, 34, 0.85);
+  border: none;
+  border-radius: 8px;
+  padding: 10px;
+  margin-top: 14px;
+  text-align: center;
+  font-size: 0.95em;
+  box-shadow: 0 1px 8px 0 rgba(0,0,0,0.10);
+}
+
+section footer p a {
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+section footer p a:hover {
+  color: #222;
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+  section {
+    max-width: 98vw;
+    padding: 8vw 2vw 4vw 2vw;
+  }
+  section main img {
+    width: 48px;
+  }
+  section main h2 {
+    font-size: 1rem;
+  }
+  ul li a {
+    min-height: 32px;
+    font-size: 0.95rem;
+    padding: 0 6px;
+  }
+}
