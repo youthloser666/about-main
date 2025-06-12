@@ -60,6 +60,18 @@
         </p>
       </footer>
     </section>
+    <script>
+      const img = document.getElementById('profile-img');
+      const staticSrc = 'img/pp.png';
+      const gifSrc = 'img/uwu.gif';
+
+      img.addEventListener('mouseenter', () => {
+        img.src = gifSrc;
+      });
+      img.addEventListener('mouseleave', () => {
+        img.src = staticSrc;
+      });
+    </script>
     <script src="main.js"></script>
   </body>
 </html>
