@@ -130,8 +130,8 @@ ul li a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 38px;
-  min-height: 38px;
+  min-width: 50px;
+  min-height: 50px;
   font-size: 1.1rem;
   text-decoration: none;
   background: linear-gradient(90deg, #222 0%, #444 100%);
@@ -209,13 +209,51 @@ section footer p a {
   transition: color 0.2s;
 }
 section footer p a:hover {
-  color: #222;
+  color: red;
 }
 
+.profile-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.profile-row img {
+  width: 80px;
+  height:80px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: linear-gradient(135deg, rgba(34,34,34,0.7) 0%, rgba(17,17,17,0.7) 100%);
+  box-shadow: 0 2px 12px 0 rgba(0,0,0,0.18);
+  border: 2px solid rgba(255,255,255,0.18);
+}
+
+.profile-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.profile-text h2 {
+  font-size: 1.30rem;
+  margin-bottom: 2px;
+  margin-top: 0;
+  text-align: left;
+  background: none;
+  color: #fff;
+  -webkit-text-fill-color: unset;
+}
+
+.profile-sub {
+  font-size: 0.98rem;
+  color: #bbb;
+  margin-left: 2px;
+}
 
 @media (max-width: 600px) {
   section {
-    max-width: 96vw;
+    max-width: 50vw;
     padding: 16px 4vw 12px 4vw;
     border-radius: 14px;
   }
@@ -233,7 +271,7 @@ section footer p a:hover {
     margin-bottom: 6px;
   }
   ul li a {
-    min-height: 32px;
+    min-height: 44px;
     font-size: 0.95rem;
     padding: 0 6px;
     border-radius: 6px;
@@ -258,7 +296,7 @@ section footer p a:hover {
     font-size: 1rem;
   }
   ul li a {
-    min-height: 32px;
+    min-height: 44px;
     font-size: 0.95rem;
     padding: 0 6px;
   }
