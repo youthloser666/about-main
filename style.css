@@ -22,7 +22,7 @@ body {
   height: 100vh;
   background:
     linear-gradient(135deg, rgba(34,34,34,0.7) 0%, rgba(17,17,17,0.7) 100%),
-    url('img/bg.jpg') no-repeat center center fixed;
+    no-repeat center center fixed;
   background-size: cover;
   margin: 0;
   padding: 0;
