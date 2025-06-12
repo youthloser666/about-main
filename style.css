@@ -29,6 +29,18 @@ body {
   overflow: hidden;
 }
 
+shader-art {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+shader-art canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
 section {
   background: rgba(30, 30, 30, 0.32);
   box-shadow: 0 8px 32px 0 rgba(0,0,0,0.18), 0 1.5px 8px 0 rgba(0,0,0,0.18);
@@ -300,4 +312,11 @@ section footer p a:hover {
     font-size: 0.95rem;
     padding: 0 6px;
   }
+}
+
+.dg.ac {
+    display: none !important;
+}
+.close-button-close-bottom {
+    display: none !important;
 }
