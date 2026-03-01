@@ -1,84 +1,236 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Osvaldo Rifki</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Osvaldo Rifki - Product Designer</title>
+    <!-- Modern Font: Outfit & Inter for premium feel -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Phosphor Icons for elegant minimalist icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <div id="cursor"></div>
-  <div id="cursor-ring"></div>
 
-  <button id="theme-toggle" aria-label="Toggle theme">
-    <i class="fa-solid fa-moon"  id="icon-moon"></i>
-    <i class="fa-solid fa-sun"   id="icon-sun"></i>
-  </button>
+    <div class="site-wrapper">
+        <!-- Top Right Theme Toggle -->
+        <button id="theme-toggle" class="theme-btn fixed-theme-btn" aria-label="Toggle Dark Mode">
+            <i class="ph-fill ph-moon"></i>
+        </button>
 
-  <div class="card">
-    <div class="card-header">
-      <canvas id="shader-canvas"></canvas>
-      <div class="profile-row">
-        <div class="avatar-wrap">
-          <img src="img/pp.png" alt="Osvaldo Rifki" id="profile-img" />
-          <div class="avatar-dot"></div>
-        </div>
-        <div class="profile-text">
-          <h2>Osvaldo Rifki</h2>
-          <span class="profile-sub">Manuel · ylab</span>
-        </div>
-      </div>
+        <!-- Main Header Section -->
+        <header class="main-header panel">
+            <div class="avatar-container">
+                <img src="img/pp.png" alt="Osvaldo Rifki" class="avatar avatar-img">
+            </div>
+
+            <h1 class="headline">
+                Osvaldo Rifki Manuel<span class="highlight-black"></span>
+            </h1>
+
+            <p class="bio">
+                My path to software didn't start in a computer science lab—it started on a production floor. I spent
+                years mastering the relentless pace of print operations and workflow management before writing my first
+                line of code. I don't see this as a pivot, but an evolution. Whether I'm optimizing a physical supply
+                chain or designing a REST API, the goal is identical: build systems that scale, eliminate bottlenecks,
+                and deliver exactly what's required, on time.
+            </p>
+
+            <div class="header-actions">
+                <div class="status-badge">
+                    <span class="pulse-dot"></span>
+                    Available for Work
+                </div>
+            </div>
+        </header>
+
+        <!-- Bento Grid Section -->
+        <main class="bento-grid panel">
+
+            <!-- Experience Timeline -->
+            <div class="bento-card experience-card">
+                <div class="card-header">
+                    <i class="ph ph-briefcase"></i>
+                    <span>Experience</span>
+                </div>
+                <div class="timeline" id="experience-timeline">
+                    <div class="timeline-item">
+                        <div class="point"></div>
+                        <div class="content">
+                            <h4>Fullstack Dev</h4>
+                            <span class="year">Antipost Gallery (Present)</span>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="point"></div>
+                        <div class="content">
+                            <h4>HD Ops/Dev</h4>
+                            <span class="year">PT MKU (2025 - present)</span>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="point"></div>
+                        <div class="content">
+                            <h4>Production Op</h4>
+                            <span class="year">KLICK Express 2018</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Now Listening (Replaced Reading) -->
+            <div class="bento-card listening-card">
+                <div class="card-header">
+                    <i class="ph ph-headphones"></i>
+                    <span>Now Listening</span>
+                </div>
+                <div class="now-playing">
+                    <img src="https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/26/b9/bf/26b9bfa2-d2b9-13a1-14fe-b453d4f3e548/781676364015.jpg/400x400bb.jpg"
+                        alt="Album Cover" class="album-cover" id="album-cover">
+                    <div class="track-info">
+                        <h4 id="dynamic-track-header">Nothing</h4>
+                        <div class="audio-player header-player" id="header-player">
+                            <!-- Real-time Visualizer Canvas linked to Now Listening audio -->
+                            <canvas id="audio-visualizer" class="visualizer-canvas" width="60" height="24"></canvas>
+                        </div>
+                        <p id="dynamic-artist-header">Fever Queen</p>
+                    </div>
+                </div>
+                <div class="player-controls">
+                    <audio id="custom-audio" crossorigin="anonymous"
+                        src="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/a3/1d/48/a31d48db-f05d-5f37-76b2-9ab2a4416815/mzaf_5548477516692247413.plus.aac.p.m4a"
+                        preload="metadata"></audio>
+                    <div class="timeline-bar" id="timeline-bar">
+                        <div class="progress" id="progress"></div>
+                    </div>
+                    <div class="times">
+                        <span id="current-time">0:00</span>
+                        <span id="total-time">0:00</span>
+                    </div>
+                    <div class="controls">
+                        <button><i class="ph-fill ph-rewind"></i></button>
+                        <button class="pause" id="play-pause-btn"><i class="ph-fill ph-play"
+                                id="play-pause-icon"></i></button>
+                        <button><i class="ph-fill ph-fast-forward"></i></button>
+                        <button class="volume"><i class="ph-fill ph-speaker-high"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dynamic Music List -->
+            <div class="bento-card dynamic-music-card" id="dynamic-music-card"
+                style="transition: background-image 0.5s ease; position: relative;">
+                <div class="card-header"
+                    style="color: #FFF; border-bottom-color: rgba(255,255,255,0.2); position: relative; z-index: 2;">
+                    <i class="ph ph-list-music"></i>
+                    <span>Playlist</span>
+                </div>
+                <div class="dynamic-music-content" style="position: relative; z-index: 2;">
+                    <div class="music-details">
+                        <h4 id="dynamic-track" style="color: #FFF; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">Nothing</h4>
+                        <p id="dynamic-artist"
+                            style="color: rgba(255,255,255,0.8); text-shadow: 0 1px 2px rgba(0,0,0,0.5);">Fever Queen
+                        </p>
+                    </div>
+                    <div class="controls" style="margin-top:auto; display:flex; gap:12px;">
+                        <button class="next-music-btn" id="next-music-btn"
+                            style="margin-top:0; flex-grow:1; justify-content:center; background-color: rgba(0,0,0,0.4); border-color: rgba(255,255,255,0.2); color: #FFF; backdrop-filter: blur(8px);">
+                            <span>Next Song</span>
+                            <i class="ph-bold ph-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Location -->
+            <div class="bento-card location-card">
+                <div class="card-header overlay">
+                    <i class="ph ph-map-pin"></i>
+                    <span>Map</span>
+                </div>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126543.08075308695!2d110.1340179934333!3d-7.4947915570072!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a8f15d97f22e7%3A0xe726458518e100c5!2sMagelang%2C%20Magelang%20City%2C%20Central%20Java!5e0!3m2!1sen!2sid!4v1700000000000!5m2!1sen!2sid"
+                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade" class="map-iframe"></iframe>
+            </div>
+
+            <!-- Photos/Activity (Cycling Slideshow) -->
+            <div class="bento-card activity-card">
+                <div class="slideshow" id="cycling-slideshow">
+                    <img src="img/1.jpeg" alt="Cycling 1" class="slide active bw-grunge temp-placeholder">
+                    <div class="grunge-overlay"></div>
+                </div>
+                <div class="activity-label" style="z-index: 2;">
+                    <i class="ph-fill ph-heart"></i>
+                    I love cycling
+                </div>
+            </div>
+
+            <!-- Contact Me -->
+            <div class="bento-card process-card contact-card">
+                <div class="card-header"
+                    style="justify-content: space-between; border-bottom: 1px solid var(--border-color); padding-bottom: 12px; margin-bottom: 16px;">
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                        <i class="ph ph-envelope-simple"></i>
+                        <span>Contact Me</span>
+                    </div>
+                    <!-- Tabs Navigation (Icons) -->
+                    <div class="contact-tabs-nav" style="display: flex; gap: 12px;">
+                        <i class="ph-bold ph-envelope-simple contact-icon-tab active" data-target="tab-email"
+                            style="cursor: pointer; font-size: 1.25rem;" title="Email"></i>
+                        <i class="ph-bold ph-share-network contact-icon-tab" data-target="tab-other"
+                            style="cursor: pointer; font-size: 1.25rem;" title="Other Platforms"></i>
+                    </div>
+                </div>
+
+                <!-- Contact Content Area -->
+                <div class="process-content" id="contact-content-area" style="height: 100%;">
+                    <!-- Tab 1: Email Form -->
+                    <div class="contact-tab active" id="tab-email">
+                        <form action="mailto:androdev909@gmail.com" method="GET" enctype="text/plain"
+                            class="contact-form">
+                            <textarea name="body" placeholder="Your message here..." required
+                                class="contact-input contact-textarea"></textarea>
+                            <button type="submit" class="submit-btn">Send Email <i
+                                    class="ph-bold ph-paper-plane-tilt"></i></button>
+                        </form>
+                    </div>
+
+                    <!-- Tab 2: Other / Socials -->
+                    <div class="contact-tab" id="tab-other" style="display: none;">
+                        <div class="social-links" style="margin-top: 0;">
+                            <a href="#" class="social-btn telegram" target="_blank">
+                                <i class="ph-fill ph-telegram-logo"></i>
+                                Telegram
+                            </a>
+                            <a href="https://github.com/" class="social-btn github" target="_blank">
+                                <i class="ph-fill ph-github-logo"></i>
+                                GitHub
+                            </a>
+                            <a href="https://instagram.com/" class="social-btn instagram" target="_blank">
+                                <i class="ph-fill ph-instagram-logo"></i>
+                                Instagram
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
     </div>
-    <div class="card-body">
-      <ul>
-        <li>
-          <a href="https://www.instagram.com/aaaaaaaldo_/" target="_blank" rel="noopener">
-            <span class="link-icon"><i class="fa-brands fa-instagram"></i></span>
-            <span class="link-label">Instagram</span>
-            <i class="fa-solid fa-arrow-right link-arrow"></i>
-          </a>
-        </li>
-        <li>
-          <a href="https://github.com/youthloser666" target="_blank" rel="noopener">
-            <span class="link-icon"><i class="fa-brands fa-github"></i></span>
-            <span class="link-label">GitHub</span>
-            <i class="fa-solid fa-arrow-right link-arrow"></i>
-          </a>
-        </li>
-        <li>
-          <a href="https://x.com/y0000uthloser" target="_blank" rel="noopener">
-            <span class="link-icon"><i class="fa-brands fa-square-x-twitter"></i></span>
-            <span class="link-label">Twitter</span>
-            <i class="fa-solid fa-arrow-right link-arrow"></i>
-          </a>
-        </li>
-        <li>
-          <a href="https://www.t.me/ttteardrops" target="_blank" rel="noopener">
-            <span class="link-icon"><i class="fa-brands fa-telegram"></i></span>
-            <span class="link-label">Telegram</span>
-            <i class="fa-solid fa-arrow-right link-arrow"></i>
-          </a>
-        </li>
-      </ul>
-    </div>
-    <footer class="card-footer">
-      <span class="footer-label">Made with 💔 by <a href="https://www.instagram.com/aaaaaaaldo_/">me.</a></span>
-      <div class="footer-dot"></div>
-    </footer>
-  </div>
 
-  <!-- GSAP CDN -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="main.js"></script>
+    <!-- GSAP for Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <!-- Script for subtle interactions -->
+    <script src="script.js"></script>
 </body>
 
 </html>

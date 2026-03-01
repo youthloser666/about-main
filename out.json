@@ -1,0 +1,11 @@
+
+
+
+{
+ "resultCount":1,
+ "results": [
+{"wrapperType":"track", "kind":"song", "artistId":593213453, "collectionId":1080004700, "trackId":1080004703, "artistName":"Nothing", "collectionName":"Tired of Tomorrow (Deluxe Version)", "trackName":"Fever Queen", "collectionCensoredName":"Tired of Tomorrow (Deluxe Version)", "trackCensoredName":"Fever Queen", "artistViewUrl":"https://music.apple.com/us/artist/nothing/593213453?uo=4", "collectionViewUrl":"https://music.apple.com/us/album/fever-queen/1080004700?i=1080004703&uo=4", "trackViewUrl":"https://music.apple.com/us/album/fever-queen/1080004700?i=1080004703&uo=4", 
+"previewUrl":"https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/a3/1d/48/a31d48db-f05d-5f37-76b2-9ab2a4416815/mzaf_5548477516692247413.plus.aac.p.m4a", "artworkUrl30":"https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/26/b9/bf/26b9bfa2-d2b9-13a1-14fe-b453d4f3e548/781676364015.jpg/30x30bb.jpg", "artworkUrl60":"https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/26/b9/bf/26b9bfa2-d2b9-13a1-14fe-b453d4f3e548/781676364015.jpg/60x60bb.jpg", "artworkUrl100":"https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/26/b9/bf/26b9bfa2-d2b9-13a1-14fe-b453d4f3e548/781676364015.jpg/100x100bb.jpg", "collectionPrice":11.99, "trackPrice":1.29, "releaseDate":"2016-05-13T12:00:00Z", "collectionExplicitness":"notExplicit", "trackExplicitness":"notExplicit", "discCount":1, "discNumber":1, "trackCount":12, "trackNumber":1, "trackTimeMillis":176436, "country":"USA", "currency":"USD", "primaryGenreName":"Rock", "isStreamable":true}]
+}
+
+
